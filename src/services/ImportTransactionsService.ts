@@ -47,9 +47,9 @@ class ImportTransactionsService {
       },
     });
 
-    const existenceCategoriesTitle = existenceCategories.map(category => {
-      return category.title;
-    });
+    const existenceCategoriesTitle = existenceCategories.map(
+      (category: Category) => category.title,
+    );
 
     const AddCategorytitles = categories
       .filter(category => !existenceCategoriesTitle.includes(category))
