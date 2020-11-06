@@ -57,10 +57,8 @@ transactionsRouter.delete('/:id', async (request, response) => {
   return response.send().status(204);
 });
 
-transactionsRouter.post(
-  '/import',
-  upload.single('file'),
-  async (request, response) => {
+// eslint-disable-next-line prettier/prettier
+transactionsRouter.post('/import', upload.single('file'), async (request, response) => {
     const ImportTransactions = new ImportTransactionsService();
 
     const transactions = await ImportTransactions.execute(request.file.path);
