@@ -1,13 +1,15 @@
 import path from 'path';
 
-// import multer from 'multer';
+import multer from 'multer';
 
-const tmpFolder = path.resolve(__dirname, '..', '__tests__');
+const testFolder = path.resolve(__dirname, '..', '__tests__');
+
+const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 
 export default {
-  directory: tmpFolder,
+  directory: testFolder,
 
-  // storage: multer.diskStorage({
-  //   destination: tmpFolder,
-  // }),
+  storage: multer.diskStorage({
+    destination: tmpFolder,
+  }),
 };
